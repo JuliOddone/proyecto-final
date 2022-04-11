@@ -1,11 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const Port = 3000;
+const Port = process.env.PORT;
 const path = require('path');
 const hbs = require('hbs');
 const mysql = require('mysql2');
 
-const conexion = mysql.createConnection({
+/*const conexion = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
@@ -17,6 +18,7 @@ conexion.connect((error) =>{
     if(error) throw error;
     console.log('Conexión a la Data Base exitosa');
 });
+*/
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
