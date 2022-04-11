@@ -12,3 +12,32 @@ que no es lo mejor que hubiera podido entregar.
 La aplicación se orienta a nuestro emprendimiento familiar cuando vivíamos en Neuquén, en el cual armábamos planes vacacionales con
 excursiones y alojamientos pre reservados por la zona de San Martín y Junín de los Andes. Se muestra un Login y un Registro funcionales, y
 la base de datos registra en otra tabla distinta de los usuarios, las consultas de los interesados en ser contactados.
+
+
+#### SCRIPT PARA LA BASE DE DATOS ####
+
+create database proyectofinal;
+use proyectofinal;
+
+create table usuarios(
+usuario_id int unsigned not null auto_increment,
+mail varchar(200) not null,
+contraseña varchar(200) not null,
+primary key(usuario_id)
+);
+
+create table consultas(
+consulta_id int unsigned not null auto_increment,
+consulta_nombre varchar(150) not null,
+consulta_monto int unsigned not null,
+consulta_mail varchar(200) not null,
+consulta_descrip text not null,
+primary key(consulta_id)
+);
+
+
+
+Realmente disfruté mucho el curso, espero estar a la altura para poder seguir con el curso de desarrollo web avanzado
+
+Saludos cordiales,
+Julián Oddone.
