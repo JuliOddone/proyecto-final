@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const Port = process.env.PORT;
+const Port = process.env.PORT || 8081;
 const path = require('path');
 const hbs = require('hbs');
 const mysql = require('mysql2');
@@ -29,6 +29,12 @@ hbs.registerPartials(path.join(__dirname,'views/partials'));
 
 app.get('/', (req, res) =>{
     res.render('index.hbs', {titulo:'Patagonia a tu alcance'})
+});
+
+app.get('/home', (res,req) =>{
+    res.json({
+        Titulo: 'Para que podamos hacer el Deploy'
+    })
 });
 
 app.post('/index.hbs', (req, res) =>{    
@@ -99,6 +105,7 @@ const {contacto, gasto, mail, descrip} = req.body;
     }
 
     let sql = 'Insert into consultas set ?';
+    
     conexion.query(sql, data, (error, results) =>{
         if(error) throw error;
         let comprobacion = 'Ingreso nuevo exitoso!'
@@ -106,7 +113,6 @@ const {contacto, gasto, mail, descrip} = req.body;
     });
 
 });
-
 
 app.get('/registro.hbs', (req, res) =>{
     res.render('registro.hbs', {titulo:'Registro'})
@@ -132,13 +138,14 @@ app.post('/registro.hbs', (req, res) =>{
         }
     
         let sql = 'Insert into usuarios set ?';
+
         conexion.query(sql, data, (error, results) =>{
+
             if(error) throw error;
             let comprobacion = 'Ingreso nuevo exitoso!'
             res.render('registro', {titulo: 'Registro', comprobacion})
         });
-    }
-    
+    }    
 );
 
 app.listen(Port, () =>{
