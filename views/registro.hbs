@@ -1,0 +1,29 @@
+<form action="./registro.hbs" method="post">
+<div class="container-fluid p-5 bg-info">
+    <h1>{{titulo}}</h1>
+    <p>Solicitud de registro</p>
+    <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email: </label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="nuevomail" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Nunca compartiremos tu email con terceros.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña: </label>
+    <input type="password" class="form-control" name="contra1" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 text-center">
+  <input type="submit" class="button btn-warning p-2 w-50" value="Ingreso Nuevo">
+</div>
+  <div class="text-center bg-light">
+  <h2 class="text-danger">
+    {{validacion}}
+  </h2>
+</div>  
+<div class="text-center bg-success">
+  <h2 class="text-light">
+    {{comprobacion}}
+  </h2>
+</div>
+</div>
+</form>

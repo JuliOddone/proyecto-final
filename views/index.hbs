@@ -1,0 +1,32 @@
+
+
+
+<div class="container-fluid p-5 bg-info">
+    <h1>{{titulo}}</h1>
+    <p>Estás a un click de tu lugar ideal</p>
+
+    <form action="/index.hbs" method="post">
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email: </label>
+    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Nunca compartiremos tu email con terceros.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña: </label>
+    <input type="password" class="form-control" name="con1" id="exampleInputPassword1">
+  </div>
+  
+  <input type="submit" class="btn btn-primary" value="Login">
+    <div class="text-center bg-light">
+  <h2 class="text-danger">
+    {{validacion}}
+  </h2>
+</div>
+</form>
+  <div class="mb-3 mt-4">
+  <label for="exampleInputPassword1" class="form-label">Si es tu primera vez aquí y quieres que te contactemos para una reserva, déjanos tus datos a continuación: </label>
+  </div>
+  <a href="./registro.hbs" class="btn btn-success">Registrar</a>
+
+</div>

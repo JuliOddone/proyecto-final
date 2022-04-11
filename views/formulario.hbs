@@ -1,0 +1,54 @@
+
+<div class="container bg-success p-10"> 
+  <div class="text-center">
+<hr>
+<h1>Nuevo Ingreso</h1>
+<hr>
+  </div>
+
+</div>
+
+<form action="./formulario.hbs" method="post">
+
+
+<div class="container-fluid bg-primary p-4 mt-">
+
+<div class="input-group mb-3 mt-4">
+  <input type="text" class="form-control" placeholder="Su nombre de contacto" name="contacto" aria-label="Ingrese su nombre de usuario" aria-describedby="basic-addon2">
+</div>
+
+
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Cuánto desea gastar en sus vacaciones</span>
+  <input type="number" class="form-control" name="gasto" aria-label="Monto en pesos argentinos">
+  <span class="input-group-text">.00</span>
+</div>
+
+<label class="form-label">Por favor, escriba un correo real, le enviaremos la información allí: </label>
+<div class="input-group mb-3">
+  <input type="email" class="form-control" name="mail" id="exampleFormControlInput1" placeholder="mail@ejemplo.com">
+</div>
+
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Cuéntenos sus expectativas</span>
+  <textarea class="form-control" name="descrip" aria-label="With textarea"></textarea>
+</div>
+
+<div class="mb-3 text-center">
+  <input type="submit" class="button btn-warning p-2 w-50" value="Enviar Datos">
+</div>
+<div class="text-center bg-light">
+  <h2 class="text-danger">
+    {{validacion}}
+  </h2>
+</div>
+<div class="text-center bg-success">
+  <h2 class="text-light">
+    {{comprobacion}}
+  </h2>
+</div>
+</div>
+</form>
+
